@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Sick Days User Type</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .error {
+                color:red
+            }
+        </style>
+    </head>
+    <body>
+        <h:form>
+            <h:panelGrid columns="2" border="1">
+                <h:panelGroup>HR Name</h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{hrName.name}" label="User Name" id="userName" required="true" requiredMessage="Filling in your name is mandatory."/>
+                    <h:message for="userName" styleClass="error" />
+                </h:panelGroup>
+            </h:panelGrid>
+            <!--<h:commandButton value="Advance" action="#{formController.loadForms(hrName.name)}"/>-->
+            <h:commandButton value="Advance" action="#{formController.loadForms()}"/>
+        </h:form>
+        <p><h:outputLink value="index.xhtml">Back to User Type Selection</h:outputLink></p>
+    </body>
+</html>

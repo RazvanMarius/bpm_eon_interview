@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{formController.loadForms()}"/>
+    </f:metadata>
+    <h:head>
+        <title>Sick Days Requests</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <h:outputStylesheet library="css" name="style.css" />
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="header">
+                <h2>Sick Days Requests</h2>
+            </div>
+        </div>
+        <div id="container">
+            <div id="content">
+                <h:form>
+                    <h:dataTable value="#{formController.forms}" var="tempForm"
+                                 styleClass="demo-table" 
+                                 headerClass="demo-table-header"
+                                 rowClasses="demo-table-odd-row,demo-table-even-row">
+                        <h:column>
+                            <f:facet name="header">User Name</f:facet>
+                            <h:outputText value="#{tempForm.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Start Date</f:facet>
+                            <h:outputText value="#{tempForm.startDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">End Date</f:facet>
+                            <h:outputText value="#{tempForm.endDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Comment</f:facet>
+                            <h:outputText value="#{tempForm.comment}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Status</f:facet>
+                            <h:outputText value="#{tempForm.status}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Approve</f:facet>
+                            <h:commandLink value="Approve" action="#{formController.approveForm(tempForm)}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Discard</f:facet>
+                            <h:commandLink value="Reject" action="#{formController.rejectForm(tempForm)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+                <p><h:outputLink value="nameHr.xhtml">Back HR Selection</h:outputLink></p>
+            </div>
+        </div>
+        <h:messages/>
+    </h:body>
+</html>

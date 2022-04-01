@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Sick Days User Type</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .error {
+                color:red
+            }
+        </style>
+    </head>
+    <body>
+        <h:form>
+            <h:panelGrid columns="2" border="1">
+                <h:panelGroup>User Type</h:panelGroup>
+                <h:panelGroup>
+                    <h:selectOneMenu value="#{choice.type}">
+                        <f:selectItem itemLabel="Employee" itemValue="employee"/>
+                        <f:selectItem itemLabel="HR" itemValue="hr"/>
+                    </h:selectOneMenu>
+                </h:panelGroup>
+            </h:panelGrid>
+            <h:commandButton value="Advance" action="#{choice.loadPage()}"/>
+        </h:form>
+    </body>
+</html>

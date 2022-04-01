@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Sick days Request</title>
+        <style>
+            .error {
+                color:red
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2" border="1">
+                <h:panelGroup>User Name</h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{form.name}" label="User Name" id="userName" required="true" requiredMessage="Filling in your name is mandatory."/>
+                    <h:message for="userName" styleClass="error" />
+                </h:panelGroup>
+                <h:panelGroup>Start Date</h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{form.startDate}" label="Start Date" id="startDate" required="true" requiredMessage="Filling in the start date is mandatory.">
+                    </h:inputText>
+                    <h:message for="startDate" styleClass="error" />
+                </h:panelGroup>
+                <h:panelGroup>End Date</h:panelGroup>
+                <h:panelGroup>
+                    <h:inputText value="#{form.endDate}" label="End Date" id="endDate" required="true" requiredMessage="Filling in the end date is mandatory.">
+                    </h:inputText>
+                    <h:message for="endDate" styleClass="error" />
+                </h:panelGroup>
+                <h:panelGroup>Comment</h:panelGroup>
+                <h:panelGroup>
+                    <h:inputTextarea value="#{form.comment}" label="Comment" id="comment"/>
+                </h:panelGroup>
+            </h:panelGrid>
+            <h:commandButton value="Submit" action="#{formController.addForm(form)}" />
+        </h:form>
+        <p><h:outputLink value="index.xhtml">Back to User Type Selection</h:outputLink></p>
+    </h:body>
+</html>
+

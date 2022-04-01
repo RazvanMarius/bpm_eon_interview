@@ -1,0 +1,4 @@
+enterSickDaysData #class
+bpms.enterSickDays #namespace
+data bpms.FormData #field
+data PERSISTENT #fieldModifier

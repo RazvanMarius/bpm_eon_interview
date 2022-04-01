@@ -1,0 +1,10 @@
+FormData #class
+bpms #namespace
+name String #field
+name PERSISTENT #fieldModifier
+startDate Date #field
+startDate PERSISTENT #fieldModifier
+endDate Date #field
+endDate PERSISTENT #fieldModifier
+comment String #field
+comment PERSISTENT #fieldModifier
